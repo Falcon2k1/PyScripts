@@ -1,4 +1,5 @@
 from dirsync import sync
+from secrets import game_sync_secrets
 
 print("Sync start")
 # this is sort of like a config file right
