@@ -36,7 +36,7 @@ pag.FAILSAFE = True
 
 def checkScreenSize():
     if screenWidth != 3440:
-        print("Incorrect screen size found, shutting down. This is designed for fullscreen 1440x3440.")
+        print("Incorrect screen size found, shutting down. This is designed for fullscreen 3440x1440.")
         sys.exit()
 
 def openReportingPage():
@@ -63,8 +63,16 @@ def paste():
     pag.hotkey('ctrl', 'v')
     pag.hotkey('alt', 'tab')
 
+def startingPrompt():
+    print("Ensure that the left half of the screen is the C+E OSOC Reporting Page, and the right side is an email message.")
+    print("The edge browser needs to be the first icon in your start menu list, and the outlook needs to be the second.")
+    input("Press any key to continue.")
+
+def endMessage():
+    input("Process is complete! Press any key to exit.")
 
 checkScreenSize()
+startingPrompt()
 init()
 #openReportingPage()
 #openOutlookMsg()
@@ -76,3 +84,5 @@ for x in ssList:
     if x[2] == True:
         snipArea()
         paste()
+
+endMessage
